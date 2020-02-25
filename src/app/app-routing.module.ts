@@ -20,9 +20,13 @@ import { ArticleCreateComponent }   from './article-create/article-create.compon
 
 import { ArticleEditComponent }   from './article-edit/article-edit.component';
 
+import { LoginComponent } from './login/login.component';
+
+import { LogoutComponent } from './logout/logout.component';
+
 // 3. Declare your routes
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'users', component: UsersComponent },
   { path: 'users/view/:id', component: UserViewComponent },
   { path: 'users/create', component: UserCreateComponent },
@@ -31,6 +35,8 @@ const routes: Routes = [
   { path: 'articles/view/:id', component: ArticleViewComponent },
   { path: 'articles/create', component: ArticleCreateComponent },
   { path: 'articles/edit/:id', component: ArticleEditComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
 ];
 
 @NgModule({

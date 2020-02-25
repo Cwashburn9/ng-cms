@@ -1,4 +1,4 @@
-<div class="view">
+<div class="main">
 <h1 *ngIf="article">Edit {{article.title}} {{article.desciption}}</h1>
 
 <form *ngIf="article" (ngSubmit)="onSubmit()" #editArticle="ngForm">

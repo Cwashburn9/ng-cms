@@ -11,6 +11,7 @@ import { Article } from '../article';
   selector: 'app-article-create',
   templateUrl: './article-create.component.html',
   styleUrls: ['./article-create.component.scss']
+
 })
 export class ArticleCreateComponent implements OnInit {
 
@@ -25,10 +26,10 @@ export class ArticleCreateComponent implements OnInit {
 
   ngOnInit(): void{}
 
-  response(response): void{
+  response(response:any): void{
     if(response.success===false){
       this.errors = response.error.errors;
-      this.errorMessage = response.error.message;
+      this.errorMessage = response.error._message;
     }
 
     if(response.success===true){

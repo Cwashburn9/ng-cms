@@ -1,5 +1,6 @@
 <div class="main">
 <h1>Articles</h1>
+<button class="button" [routerLink]="['/articles/create']">New Article</button>
 <ul *ngIf="articles">
   <li *ngFor="let article of articles">
     <a [routerLink]="['/articles/view/', article._id]">{{article.title}}</a>

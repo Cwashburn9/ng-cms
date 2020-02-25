@@ -1,5 +1,6 @@
-<div class="view">
+<div class="main">
   <h1>Users</h1>
+  <button class="button" [routerLink]="['/users/create']">New User</button>
   <ul *ngIf="users">
     <li *ngFor="let user of users">
       <a [routerLink]="['/users/view/', user._id]">{{user.username}}</a>
