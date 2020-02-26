@@ -16,18 +16,20 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  logout(user: any) {
-    throw new Error("Method not implemented.");
-  }
   // 4. Set the domain portion of the url
-  private url:string = 'http://localhost:3000/api/auth';
+  private url: string = 'http://localhost:3000/api/auth';
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
   // 5. Replace the test method with a working implementation of login.
   login(user: User): Observable<User> {
     return this.http.post<User>(`${this.url}/login`, user, httpOptions);
   }
+
+  logout(): Observable<User> {
+    return this.http.get<User>(`${this.url}/logout`, httpOptions);
+  }
+
 }

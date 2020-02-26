@@ -9,7 +9,6 @@
     <br>
     <div><strong>Published:</strong>{{article.published}}</div>
     <br>
-    <button class="button" [routerLink]="['/articles/edit/', article._id]">Edit</button>
     <button class="button" (click)="deleteArticle(article._id)">Delete</button>
   </div>
 </div>

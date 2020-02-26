@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
-import { UsersService } from '../users.service';
-import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { User } from '../models/user';
+
 
 @Component({
   selector: 'app-logout',
@@ -10,14 +9,20 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./logout.component.scss']
 })
 export class LogoutComponent implements OnInit {
+  user: User = new User();
+  error: any
 
-  constructor(private userService: UserService, private router: Router) { }
-  ngOnInit() { }
-  logout(): void {
-    this.userService.logout(
+  constructor(private userService: UserService) { }
+
+  ngOnInit() {
+    console.log("here");
+    this.userService.logout().subscribe(
       (response: any) => {
         console.log(response);
-          this.router.navigate(['/login']);
+
+        if (response.success == false) {
+          this.error = true;
+        }
       }
     );
   }

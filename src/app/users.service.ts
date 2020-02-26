@@ -11,10 +11,8 @@ const httpOptions = {
   {providedIn: 'root'
 })
 export class UsersService {
-  login(user: import("./models/user").User) {
-    // throw new Error("Method not implemented.");
-  }
   private url: string = 'http://localhost:3000/api/users';
+
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User> {
