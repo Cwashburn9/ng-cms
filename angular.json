@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "baseHref": "/ng-cms/",
-            "outputPath": "/home/mean.example.com/public/ng-cms",
+            "outputPath": "/home/dev/mean.example.com/public/ng-cms",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
